@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debreviate - Test</title>
+    <style>
+      input, textarea {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      input {
+        width: 400px;
+      }
+
+      textarea {
+        height: 100px;
+        width: 400px;
+      }
+
+      button {
+        margin-bottom: 50px;
+        width: 150px;
+        height: 50px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var button = document.querySelector('#run-bookmarklet');
+        button.addEventListener('click', function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'bookmarklet_src.js'
+          document.body.appendChild(script);
+        }, false);
+      }, false);
+
+    </script>
+  </head>
+  <body>
+    <button id="run-bookmarklet">Run Bookmarklet</button>
+    <a href="javascript:void%20function(){if(ID=%221wByQxdc-OPu4lAw9lZbVb0LyIK4nNQZQOktzKLai9Bc%22,window.__debreviate)window.__debreviate.main(ID);else{var%20e=document.createElement(%22script%22);e.async=!0,e.src=%22http://192.168.1.64:8080/debreviate.js%22,e.addEventListener(%22load%22,function(){window.__debreviate.main(ID)},!1),document.body.appendChild(e)}}();">Hello</a>
+
+    <input type="text" value="hello"/>
+    <input type="text" />
+    <textarea>Hello</textarea>
+    <textarea></textarea>
+
+  </body>
+</html>
